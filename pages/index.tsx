@@ -10,6 +10,10 @@ export default function Home(): JSX.Element {
       <Button appearance='ghost' arrow='down'>ho</Button>
       <Paragraph size='l'>this is paragraph</Paragraph>
       <Tag color='green' >Hello</Tag>
+      <Tag color='red' >Hello</Tag>
+      <Tag color='gray' >Hello</Tag>
+      <Tag color='primary' >Hello</Tag>
+      <Tag href='http://Google.com' >Hello</Tag>
     </div>
   );
 }

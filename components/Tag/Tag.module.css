@@ -29,14 +29,14 @@
 	color: var(--white);
 	background-color: var(--red);
 
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .gray {
 	color: var(--white);
 	background-color: var(--gray-light);
 
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .green {
