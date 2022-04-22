@@ -13,18 +13,22 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
 
 	const constructRating = (currentRating: number) => {
 		const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
+			// covered in span to reduce clunky effect when mouse leave star to margin space
 			return (
-				<StarIcon className={cn(styles.star, {
-					[styles.fill]: i < currentRating,
-					[styles.editable]: isEditable
-				})}
+				<span
+					className={cn(styles.star, {
+						[styles.fill]: i < currentRating,
+						[styles.editable]: isEditable
+					})}
 					key={i}
 					onMouseEnter={() => changeRating(i + 1)}
 					onMouseLeave={() => changeRating(rating)}
 					onClick={() => clickRating(i + 1)}
-					tabIndex={isEditable ? 0 : -1}
-					onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)}
-				/>
+				>
+					<StarIcon
+						tabIndex={isEditable ? 0 : -1}
+						onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)}
+					/></span>
 			);
 		});
 
