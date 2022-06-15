@@ -1,5 +1,5 @@
 import { LayoutProps } from './Layout.props';
-import styles from './Paragraph.module.css';
+import styles from './Layout.module.css';
 import cn from 'classnames';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Header } from './Header/Header';
@@ -7,16 +7,15 @@ import { FunctionComponent } from 'react';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
-		<>
-			<Header />
-			<div>
-				<Sidebar />
-				<div>
-					{children}
-				</div>
+		<div>
+			<Header className={styles.header} />
+			<Sidebar className={styles.header} />
+			<div className={styles.header} >
+				{children}
 			</div>
+		</div>
 
-		</>
+		</div >
 	);
 };
 
