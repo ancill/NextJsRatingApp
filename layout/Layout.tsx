@@ -4,18 +4,20 @@ import cn from 'classnames';
 import { Sidebar } from './Sidebar/Sidebar';
 import { Header } from './Header/Header';
 import { FunctionComponent } from 'react';
+import { Footer } from './Footer/Footer';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
-		<div>
-			<Header className={styles.header} />
-			<Sidebar className={styles.header} />
-			<div className={styles.header} >
+		<div className={styles.wrapper}>
+			<Header className={styles.header} >{children}</Header>
+			<Sidebar className={styles.sidebar}
+			>{children}</Sidebar>
+			<div className={styles.body} >
 				{children}
 			</div>
+			<Footer className={styles.footer} >{children}</Footer>
 		</div>
 
-		</div >
 	);
 };
 
