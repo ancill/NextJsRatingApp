@@ -1,10 +1,15 @@
 import { FooterProps } from './Footer.props';
-import styles from './Paragraph.module.css';
+import styles from './Footer.module.css';
 import cn from 'classnames';
-export const Footer = ({ ...props }: FooterProps): JSX.Element => {
+import { format } from 'date-fns';
+export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 	return (
-		<div {...props}>
-			Footer
-		</div>
+		<footer className={cn(className, styles.footer)} {...props}>
+			<div>
+				Website 2020 - {format(new Date(), 'yyyy')}
+			</div>
+			<a href='#' target='blank'>Пользовательское соглашение</a>
+			<a href='#' target='blank'>Политика конфиденцальности</a>
+		</footer>
 	);
 };
